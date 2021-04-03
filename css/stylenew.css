@@ -12,9 +12,33 @@ h1 {
 p {
   font-family: Poppins, sans-serif;
 }
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+/*
+.container {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+*/
+
+section {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
 body {
   background-color: #f2f2f2;
   margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 /* Header-Nav Section HOMEWORK DIRECTIONS*/
 .logo {
@@ -23,24 +47,34 @@ body {
   text-align: center;
 }
 
-/* Header-Nav Section*/
+/* Header-Nav Section */
 header {
+  position: fixed;
+  top: 0;
   width: 100%;
+  height: 60px;
   color: #111035;
+  background-color: rgba(242, 242, 242, 0.7);
   font-family: poppins;
   justify-content: space-between;
   vertical-align: middle;
+  z-index: 1;
+  display: flex;
 }
 
 .rightNav {
   float: right;
+  align-items: baseline;
 }
 
 .rightNav ul {
+  display: flex;
   font-size: 18px;
   list-style-type: none;
   margin-right: 72px;
   padding: 0px;
+  float: right;
+  justify-content: flex-end;
 }
 
 .rightNav li {
@@ -57,6 +91,7 @@ header {
 
 .leftNav {
   float: left;
+  align-items: baseline;
 }
 
 .leftNav h1 {
@@ -145,7 +180,9 @@ button:hover {
   font-family: poppins;
   font-weight: 900;
 }
-
+button a {
+  text-decoration: none;
+}
 /* About and Skills Section*/
 .flexContainer {
   display: flex;
@@ -156,7 +193,7 @@ button:hover {
   width: 33%;
   padding: 16px;
 }
-.about_skills {
+#aboutSection {
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -245,7 +282,7 @@ button:hover {
 }
 
 /* My Work Section*/
-.myWork {
+#myWork {
   display: grid;
   width: 100%;
   justify-content: center;
